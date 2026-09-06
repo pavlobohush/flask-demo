@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "<h1>Hei!</h1><p>Servert fra mitt virtuelle miljø</p>"
+    return "<h1>Hello!</h1><p>Servert fra mitt virtuelle miljø</p>"
 
 
 if __name__ == "__main__":
