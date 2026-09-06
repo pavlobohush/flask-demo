@@ -1,11 +1,16 @@
+import os
+from dotenv import load_dotenv
 from flask import Flask
+
+load_dotenv()
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def hello():
-    return "<h1>Hei igjen!</h1><p>Servert fra mitt virtuelle miljø</p>"
+    hemmelighet = os.getenv("SECRET_MESSAGE", "ingen hemmelighet satt")
+    return f"<h1>Hei fra Flask!</h1><p>{hemmelighet}</p>"
 
 
 if __name__ == "__main__":
